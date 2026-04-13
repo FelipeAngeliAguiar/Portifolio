@@ -20,6 +20,10 @@ import clockIcon from "../../assets/time.svg";
 import certificateIcon from "../../assets/certificate.svg";
 import langIcon from "../../assets/language.svg";
 import copyIcon from "../../assets/copy-solid.svg";
+import fallgatterIcon from "../../assets/fallgatter.png";
+import powerbiIcon from "../../assets/powerbi.png";
+import powerappsIcon from "../../assets/powerapps.png";
+import appsheetIcon from "../../assets/appsheet.png";
 import { useState, useEffect, useRef } from "react";
 import ScrollReveal from "scrollreveal";
 import { div } from "framer-motion/client";
@@ -254,8 +258,8 @@ function Home() {
               <h1>{language === "pt" ? "Sobre mim" : "About me"}</h1>
               <p>
                 {language === "pt"
-                  ? "Sou Felipe, um estudante de 19 anos apaixonado por tecnologia e programação. Tenho experiência em linguagens como Python, Java, JavaScript e HTML, além de fluência em inglês avançado. Estou em busca de novas oportunidades para expandir meu conhecimento e crescer profissionalmente nessa área fascinante."
-                  : "I am Felipe, a 19-year-old student passionate about technology and programming. I have experience in languages such as Python, Java, JavaScript, and HTML, as well as fluency in advanced English. I am looking for new opportunities to expand my knowledge and grow professionally in this fascinating field."}
+                  ? "Sou Felipe, um estudante de 19 anos apaixonado por tecnologia e programação. Tenho experiência prática em desenvolvimento de sistemas (Python, JavaScript, HTML) e automação de processos industriais com ferramentas Low-Code (Power Platform, AppSheet). Fluente em inglês avançado, busco sempre unir a inovação com a eficiência para resolver problemas reais."
+                  : "I am Felipe, a 19-year-old student passionate about technology and programming. I have practical experience in systems development (Python, JavaScript, HTML) and industrial process automation with Low-Code tools (Power Platform, AppSheet). Fluent in advanced English, I always seek to combine innovation and efficiency to solve real-world problems."}
               </p>
             </div>
 
@@ -268,6 +272,9 @@ function Home() {
                   { icon: cssIcon, name: "CSS" },
                   { icon: reactIcon, name: "React" },
                   { icon: pythonIcon, name: "Python" },
+                  { icon: powerappsIcon, name: "Power Apps" },
+                  { icon: powerbiIcon, name: "Power BI" },
+                  { icon: appsheetIcon, name: "AppSheet" },
                 ].map((skill, index) => (
                   <div key={index} className="skills-card">
                     <img src={skill.icon} alt={skill.name} />
@@ -283,6 +290,57 @@ function Home() {
         <div className="projects-div">
           {[
             {
+              h1: language === "pt" ? "Experiência" : "Experience",
+              title: "Metalúrgica Fallgatter",
+              summary:
+                language === "pt"
+                  ? "Estagiário de TI / ADM"
+                  : "IT / Admin Intern",
+              details:
+                language === "pt"
+                  ? [
+                      "Transformação Digital e Inovação: Atuação na modernização do chão de fábrica, liderando a transição para operações paperless (sem papel), com foco na digitalização do setor de Solda.",
+                      "Desenvolvimento e implementação de ecossistema de aplicativos móveis utilizando Microsoft Power Apps para controle de almoxarifado, gestão de matéria-prima e checklists.",
+                      "Desenvolvimento de sistema de gestão de produção via Google AppSheet, otimizando o fluxo de peças (MES) e substituindo planilhas manuais.",
+                      "Criação de dashboards gerenciais avançados no Power BI para métricas em tempo real e acompanhamento de melhorias.",
+                      "Suporte na utilização do ERP SAP e aplicação de metodologias de manufatura para ganho de eficiência operacional.",
+                    ]
+                  : [
+                      "Digital Transformation & Innovation: Involved in the modernization of the shop floor, leading the transition to paperless operations, focusing on the Welding department.",
+                      "Developed mobile applications using Microsoft Power Apps for warehouse control, raw material management, and operational checklists.",
+                      "Developed a production management system via Google AppSheet (MES), optimizing parts flow and replacing manual spreadsheets.",
+                      "Created advanced management dashboards in Power BI providing real-time metrics and tracking continuous improvement.",
+                      "Supported the use of SAP ERP and applied manufacturing methodologies to improve operational efficiency.",
+                    ],
+              link: "https://www.linkedin.com/in/felipeangeliaguiar/",
+              linkText: language === "pt" ? "Ver no LinkedIn" : "View on LinkedIn",
+              icon: fallgatterIcon,
+            },
+            {
+              h1: language === "pt" ? "Experiência" : "Experience",
+              title: "Cognitiva Brasil",
+              summary:
+                language === "pt"
+                  ? "Engenheiro de Software Júnior"
+                  : "Junior Software Engineer",
+              details:
+                language === "pt"
+                  ? [
+                      "Atuação no ciclo completo de desenvolvimento de software, com foco principal em Backend e entrega de soluções escaláveis.",
+                      "Utilização de Python para construção de APIs e lógicas de negócio, integradas a interfaces em JavaScript, HTML e CSS.",
+                      "Colaboração ativa em projetos ágeis, garantindo a entrega de funcionalidades dentro dos prazos.",
+                    ]
+                  : [
+                      "Worked on the full software development lifecycle, focusing primarily on Backend and scalable solutions.",
+                      "Used Python to build APIs and business logic, integrated with interfaces in JavaScript, HTML, and CSS.",
+                      "Actively collaborated in agile projects, ensuring the delivery of features within established deadlines.",
+                    ],
+              link: "https://www.linkedin.com/company/cognitiva-brasil/",
+              linkText:
+                language === "pt" ? "Ver no LinkedIn" : "View on LinkedIn",
+              icon: cognitivaIcon,
+            },
+            {
               h1: language === "pt" ? "Projetos" : "Projects",
               title: "GaneshIA",
               summary:
@@ -296,44 +354,16 @@ function Home() {
                       "Implementação de lógica de tomada de decisão baseada em ChatGPT para interpretar sinais e recomendações de mercado.",
                       "Uso de análise técnica com indicadores como RSI, MACD e médias móveis para definir pontos de entrada e saída.",
                       "Backtesting de estratégias com histórico de dados para validação de performance.",
-                      "Arquitetura modular com integração a banco de dados para registro de operações e logs.",
-                      "Conexão a APIs de corretoras para leitura de cotações em tempo real.",
                     ]
                   : [
                       "Built using Python, integrating MetaTrader5 for real-time order execution.",
                       "Decision-making logic powered by ChatGPT for interpreting market signals and recommendations.",
                       "Technical analysis using indicators such as RSI, MACD, and moving averages.",
                       "Strategy backtesting with historical data for performance validation.",
-                      "Modular architecture with database integration for operation logs and state tracking.",
-                      "Connected to brokerage APIs for real-time stock price monitoring.",
                     ],
               link: "https://github.com/FelipeAngeliAguiar/GaneshIA",
               linkText: language === "pt" ? "Ver no GitHub" : "View on GitHub",
               icon: codeIcon,
-            },
-            {
-              h1: language === "pt" ? "Experiência" : "Experience",
-              title: "Cognitiva Brasil",
-              summary:
-                language === "pt"
-                  ? "Estagiário em Desenvolvimento de Software"
-                  : "Software Development Intern",
-              details:
-                language === "pt"
-                  ? [
-                      "Desenvolvi sistemas e ferramentas internas utilizando Python, React e SQL.",
-                      "Atuei na criação de soluções terceirizadas para clientes da empresa, com foco em automação de processos e eficiência operacional.",
-                      "Contribuí em projetos colaborativos com equipes de desenvolvimento, incluindo um projeto em equipe de maior escala.",
-                    ]
-                  : [
-                      "Developed internal systems and tools using Python, React, and SQL.",
-                      "Worked on outsourced software solutions for company clients, focusing on process automation and operational efficiency.",
-                      "Collaborated on multiple development projects, including a larger-scale team-based project.",
-                    ],
-              link: "https://www.linkedin.com/company/cognitiva-brasil/",
-              linkText:
-                language === "pt" ? "Ver no LinkedIn" : "View on LinkedIn",
-              icon: cognitivaIcon,
             },
           ].map((proj, index) => {
             const isExpanded = expandedCard === index;
@@ -410,6 +440,17 @@ function Home() {
             />
           </div>
           <div className="table-row">
+            <EducationCard
+              image={bradescoIcon}
+              name="Fundação Bradesco"
+              time="2009 - 2023"
+              place="Gravataí - Brasil"
+              cert={
+                language === "pt"
+                  ? "Ensino Médio Completo"
+                  : "High School Diploma"
+              }
+            />
             <EducationCard
               image={wizardIcon}
               name="Wizard by Pearson"
